@@ -26,7 +26,9 @@ describe 'a visitor' do
     end
 
     it 'should see a list of astronauts space misstions' do
-      
+      astro_1 = Astronaut.create(name: 'sdfa', age: 1, job: 'sdgds')
+      space_m_1 = astro_1.space_mmissions.create(title: 'sfdg', trip_length: 1)
+      space_m_2 = astro_1.space_mmissions.create(title: 'hgf', trip_length: 3)
     end
   end
 end
