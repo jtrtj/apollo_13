@@ -3,8 +3,8 @@ require 'rails_helper'
 describe 'a visitor' do
   context 'visiting /astronauts' do
     it 'should see a list of all astronauts' do
-      astro_1 = Astronaut.create(name: 'sdfa', age: 'asdg', job: 'sdgds')
-      astro_2 = Astronaut.create(name: 'sjhg', age: 'sa', job: 'nbv')
+      astro_1 = Astronaut.create(name: 'sdfa', age: 34, job: 'sdgds')
+      astro_2 = Astronaut.create(name: 'sjhg', age: 36, job: 'nbv')
 
       visit '/astronauts'
 
@@ -15,17 +15,18 @@ describe 'a visitor' do
       expect(page).to have_content(astro_2.name)
       expect(page).to have_content(astro_2.name)
     end
+
+    it 'should see the average age of all astronauts' do
+      astro_1 = Astronaut.create(name: 'sdfa', age: 1, job: 'sdgds')
+      astro_2 = Astronaut.create(name: 'sjhg', age: 3, job: 'nbv')
+
+      visit '/astronauts'
+
+      expect(page).to have_content("Average Age: #{Astronaut.average_age}")
+    end
   end
 end
 =begin
-As a visitor,
-When I visit '/astronauts'
-I see a list of astronauts with the following info:
- - Name
- - Age
- - Job
- (e.g. "Name: Neil Armstrong" Age: 37 Job: Commander")
-```
 
 ```
 As a visitor,
