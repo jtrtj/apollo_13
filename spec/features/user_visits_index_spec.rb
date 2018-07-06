@@ -24,16 +24,13 @@ describe 'a visitor' do
 
       expect(page).to have_content("Average Age: #{Astronaut.average_age}")
     end
+
+    it 'should see a list of astronauts space misstions' do
+      
+    end
   end
 end
 =begin
-
-```
-As a visitor,
-When I visit '/astronauts'
-I see the average age of all astronauts.
-(e.g. "Average Age: 34")
-```
 
 ```
 As a visitor,
