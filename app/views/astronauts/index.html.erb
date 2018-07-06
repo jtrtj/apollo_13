@@ -1,0 +1,16 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+</head>
+<body
+  <% @astronauts.each do |astro| %>
+    <div id="<%= astro.id %>">
+    <ul>
+      <li><%= astro.name %></ul>
+      <li><%= astro.age %></ul>
+      <li><%= astro.job %></ul>
+    </ul>
+    </div>
+  <% end %>
+</body>
+</html>
